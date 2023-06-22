@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package psi_proto;
+
+
+message Setup {
+}
+
+
+message Request {
+  repeated bytes elements = 1;
+}
+
+
+message Response {
+  message Masked {
+    repeated bytes elements = 1;
+  }
+  message Hashed {
+    repeated bytes elements = 1;
+  }
+
+  Masked masked = 1;
+  Hashed hashed = 2;
+}
+
+
+message Result{
+  int32 intersection_size = 1;
+}
+
+
